@@ -1,0 +1,649 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		422954E7200333950075BD12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422954E6200333950075BD12 /* AppDelegate.swift */; };
+		422954E9200333950075BD12 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422954E8200333950075BD12 /* RootViewController.swift */; };
+		422954EE200333950075BD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422954ED200333950075BD12 /* Assets.xcassets */; };
+		422954F1200333950075BD12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422954EF200333950075BD12 /* LaunchScreen.storyboard */; };
+		422954FC200333950075BD12 /* ChatmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422954FB200333950075BD12 /* ChatmeTests.swift */; };
+		422955082003377E0075BD12 /* JLConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422955072003377E0075BD12 /* JLConversationViewController.swift */; };
+		4229550A200337B50075BD12 /* JLConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42295509200337B50075BD12 /* JLConversationListViewController.swift */; };
+		4229550D200339AA0075BD12 /* JLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229550C200339AA0075BD12 /* JLLoginViewController.swift */; };
+		4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229550E200339D10075BD12 /* JLRegistrationViewController.swift */; };
+		4229551220033F390075BD12 /* JLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229551120033F390075BD12 /* JLBaseViewController.swift */; };
+		422955152003900D0075BD12 /* JLRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422955142003900D0075BD12 /* JLRegistrationManager.swift */; };
+		424ACF042003A87A007B4C15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */; };
+		424ACF062003C084007B4C15 /* JLLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF052003C084007B4C15 /* JLLoginManager.swift */; };
+		882FCB257B749C9C642ECB8F /* Pods_Chatme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC11586979961BF0D6D634 /* Pods_Chatme.framework */; };
+		F971242B23D020ED03B42B8E /* Pods_ChatmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		422954F8200333950075BD12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 422954DB200333950075BD12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 422954E2200333950075BD12;
+			remoteInfo = Chatme;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07376392A8DCC9E8A87DBEB9 /* Pods-Chatme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatme.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chatme/Pods-Chatme.release.xcconfig"; sourceTree = "<group>"; };
+		110D82C384FC967A0C21AF83 /* Pods-ChatmeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatmeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests.release.xcconfig"; sourceTree = "<group>"; };
+		25DA9C7E152DAD18FD18BB4D /* Pods-ChatmeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatmeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		40DC11586979961BF0D6D634 /* Pods_Chatme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chatme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		422954E3200333950075BD12 /* Chatme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatme.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		422954E6200333950075BD12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		422954E8200333950075BD12 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		422954ED200333950075BD12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		422954F0200333950075BD12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		422954F2200333950075BD12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422954F7200333950075BD12 /* ChatmeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatmeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		422954FB200333950075BD12 /* ChatmeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatmeTests.swift; sourceTree = "<group>"; };
+		422954FD200333950075BD12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422955072003377E0075BD12 /* JLConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLConversationViewController.swift; path = JLConversationViewController/JLConversationViewController.swift; sourceTree = "<group>"; };
+		42295509200337B50075BD12 /* JLConversationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLConversationListViewController.swift; path = JLConversationListViewController/JLConversationListViewController.swift; sourceTree = "<group>"; };
+		4229550C200339AA0075BD12 /* JLLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLLoginViewController.swift; path = LoginAndRegistration/JLLoginViewController.swift; sourceTree = "<group>"; };
+		4229550E200339D10075BD12 /* JLRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLRegistrationViewController.swift; path = LoginAndRegistration/JLRegistrationViewController.swift; sourceTree = "<group>"; };
+		4229551120033F390075BD12 /* JLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLBaseViewController.swift; sourceTree = "<group>"; };
+		422955142003900D0075BD12 /* JLRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLRegistrationManager.swift; sourceTree = "<group>"; };
+		424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		424ACF052003C084007B4C15 /* JLLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginManager.swift; sourceTree = "<group>"; };
+		6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBD2DDC0B2D70BCE93920072 /* Pods-Chatme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chatme/Pods-Chatme.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		422954E0200333950075BD12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882FCB257B749C9C642ECB8F /* Pods_Chatme.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		422954F4200333950075BD12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F971242B23D020ED03B42B8E /* Pods_ChatmeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		194594314AF45306A73AA44D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40DC11586979961BF0D6D634 /* Pods_Chatme.framework */,
+				6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		422954DA200333950075BD12 = {
+			isa = PBXGroup;
+			children = (
+				422954E5200333950075BD12 /* Chatme */,
+				422954FA200333950075BD12 /* ChatmeTests */,
+				422954E4200333950075BD12 /* Products */,
+				5E8BE12AB88A6A53A2B5185E /* Pods */,
+				194594314AF45306A73AA44D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		422954E4200333950075BD12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				422954E3200333950075BD12 /* Chatme.app */,
+				422954F7200333950075BD12 /* ChatmeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		422954E5200333950075BD12 /* Chatme */ = {
+			isa = PBXGroup;
+			children = (
+				4229551020033F180075BD12 /* BaseViewController */,
+				4229550B200339750075BD12 /* LoginAndRegistration */,
+				42295506200336730075BD12 /* chatViewController */,
+				422954E6200333950075BD12 /* AppDelegate.swift */,
+				422954E8200333950075BD12 /* RootViewController.swift */,
+				422954ED200333950075BD12 /* Assets.xcassets */,
+				422954EF200333950075BD12 /* LaunchScreen.storyboard */,
+				422954F2200333950075BD12 /* Info.plist */,
+				424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */,
+			);
+			path = Chatme;
+			sourceTree = "<group>";
+		};
+		422954FA200333950075BD12 /* ChatmeTests */ = {
+			isa = PBXGroup;
+			children = (
+				422954FB200333950075BD12 /* ChatmeTests.swift */,
+				422954FD200333950075BD12 /* Info.plist */,
+			);
+			path = ChatmeTests;
+			sourceTree = "<group>";
+		};
+		42295506200336730075BD12 /* chatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				422955072003377E0075BD12 /* JLConversationViewController.swift */,
+				42295509200337B50075BD12 /* JLConversationListViewController.swift */,
+			);
+			path = chatViewController;
+			sourceTree = "<group>";
+		};
+		4229550B200339750075BD12 /* LoginAndRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				4229551320038FE60075BD12 /* JLAuthManagers */,
+				4229550C200339AA0075BD12 /* JLLoginViewController.swift */,
+				4229550E200339D10075BD12 /* JLRegistrationViewController.swift */,
+			);
+			path = LoginAndRegistration;
+			sourceTree = "<group>";
+		};
+		4229551020033F180075BD12 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4229551120033F390075BD12 /* JLBaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		4229551320038FE60075BD12 /* JLAuthManagers */ = {
+			isa = PBXGroup;
+			children = (
+				422955142003900D0075BD12 /* JLRegistrationManager.swift */,
+				424ACF052003C084007B4C15 /* JLLoginManager.swift */,
+			);
+			path = JLAuthManagers;
+			sourceTree = "<group>";
+		};
+		5E8BE12AB88A6A53A2B5185E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBD2DDC0B2D70BCE93920072 /* Pods-Chatme.debug.xcconfig */,
+				07376392A8DCC9E8A87DBEB9 /* Pods-Chatme.release.xcconfig */,
+				25DA9C7E152DAD18FD18BB4D /* Pods-ChatmeTests.debug.xcconfig */,
+				110D82C384FC967A0C21AF83 /* Pods-ChatmeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		422954E2200333950075BD12 /* Chatme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42295500200333950075BD12 /* Build configuration list for PBXNativeTarget "Chatme" */;
+			buildPhases = (
+				38C8BAD359E5C533B979FDCF /* [CP] Check Pods Manifest.lock */,
+				422954DF200333950075BD12 /* Sources */,
+				422954E0200333950075BD12 /* Frameworks */,
+				422954E1200333950075BD12 /* Resources */,
+				3A452E6DB09F4F8603DC72E8 /* [CP] Embed Pods Frameworks */,
+				6BA2F2D301F68123E6E4EE45 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chatme;
+			productName = Chatme;
+			productReference = 422954E3200333950075BD12 /* Chatme.app */;
+			productType = "com.apple.product-type.application";
+		};
+		422954F6200333950075BD12 /* ChatmeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42295503200333950075BD12 /* Build configuration list for PBXNativeTarget "ChatmeTests" */;
+			buildPhases = (
+				DFFA8312FB54C47DD19B9FE7 /* [CP] Check Pods Manifest.lock */,
+				422954F3200333950075BD12 /* Sources */,
+				422954F4200333950075BD12 /* Frameworks */,
+				422954F5200333950075BD12 /* Resources */,
+				284BF7ECA5E264AB665549CD /* [CP] Embed Pods Frameworks */,
+				CB2EBB8C9A177980C63DEE5B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				422954F9200333950075BD12 /* PBXTargetDependency */,
+			);
+			name = ChatmeTests;
+			productName = ChatmeTests;
+			productReference = 422954F7200333950075BD12 /* ChatmeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		422954DB200333950075BD12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Joshua;
+				TargetAttributes = {
+					422954E2200333950075BD12 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					422954F6200333950075BD12 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 422954E2200333950075BD12;
+					};
+				};
+			};
+			buildConfigurationList = 422954DE200333950075BD12 /* Build configuration list for PBXProject "Chatme" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 422954DA200333950075BD12;
+			productRefGroup = 422954E4200333950075BD12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				422954E2200333950075BD12 /* Chatme */,
+				422954F6200333950075BD12 /* ChatmeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		422954E1200333950075BD12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				422954F1200333950075BD12 /* LaunchScreen.storyboard in Resources */,
+				422954EE200333950075BD12 /* Assets.xcassets in Resources */,
+				424ACF042003A87A007B4C15 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		422954F5200333950075BD12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		284BF7ECA5E264AB665549CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38C8BAD359E5C533B979FDCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chatme-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A452E6DB09F4F8603DC72E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Chatme/Pods-Chatme-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chatme/Pods-Chatme-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BA2F2D301F68123E6E4EE45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chatme/Pods-Chatme-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2EBB8C9A177980C63DEE5B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFFA8312FB54C47DD19B9FE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatmeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		422954DF200333950075BD12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				422954E9200333950075BD12 /* RootViewController.swift in Sources */,
+				4229550D200339AA0075BD12 /* JLLoginViewController.swift in Sources */,
+				4229550A200337B50075BD12 /* JLConversationListViewController.swift in Sources */,
+				4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */,
+				4229551220033F390075BD12 /* JLBaseViewController.swift in Sources */,
+				422955152003900D0075BD12 /* JLRegistrationManager.swift in Sources */,
+				422954E7200333950075BD12 /* AppDelegate.swift in Sources */,
+				424ACF062003C084007B4C15 /* JLLoginManager.swift in Sources */,
+				422955082003377E0075BD12 /* JLConversationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		422954F3200333950075BD12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				422954FC200333950075BD12 /* ChatmeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		422954F9200333950075BD12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 422954E2200333950075BD12 /* Chatme */;
+			targetProxy = 422954F8200333950075BD12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		422954EF200333950075BD12 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				422954F0200333950075BD12 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		422954FE200333950075BD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		422954FF200333950075BD12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42295501200333950075BD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD2DDC0B2D70BCE93920072 /* Pods-Chatme.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9R572YACD;
+				INFOPLIST_FILE = Chatme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coffeeforthewicked.Chatme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42295502200333950075BD12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07376392A8DCC9E8A87DBEB9 /* Pods-Chatme.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9R572YACD;
+				INFOPLIST_FILE = Chatme/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coffeeforthewicked.Chatme;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42295504200333950075BD12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25DA9C7E152DAD18FD18BB4D /* Pods-ChatmeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9R572YACD;
+				INFOPLIST_FILE = ChatmeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coffeeforthewicked.ChatmeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chatme.app/Chatme";
+			};
+			name = Debug;
+		};
+		42295505200333950075BD12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110D82C384FC967A0C21AF83 /* Pods-ChatmeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9R572YACD;
+				INFOPLIST_FILE = ChatmeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coffeeforthewicked.ChatmeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chatme.app/Chatme";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		422954DE200333950075BD12 /* Build configuration list for PBXProject "Chatme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				422954FE200333950075BD12 /* Debug */,
+				422954FF200333950075BD12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42295500200333950075BD12 /* Build configuration list for PBXNativeTarget "Chatme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42295501200333950075BD12 /* Debug */,
+				42295502200333950075BD12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42295503200333950075BD12 /* Build configuration list for PBXNativeTarget "ChatmeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42295504200333950075BD12 /* Debug */,
+				42295505200333950075BD12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 422954DB200333950075BD12 /* Project object */;
+}
