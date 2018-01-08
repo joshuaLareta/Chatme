@@ -1,0 +1,139 @@
+Podfile.lock
+Chatme.xcworkspace/contents.xcworkspacedata
+Pods/Manifest.lock
+Pods/Firebase/README.md
+Pods/Firebase/Core/Sources/Firebase.h
+Pods/Firebase/Core/Sources/module.modulemap
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/FirebaseAnalytics
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h
+Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap
+Pods/FirebaseAnalytics/Frameworks/FirebaseCoreDiagnostics.framework/FirebaseCoreDiagnostics
+Pods/FirebaseAnalytics/Frameworks/FirebaseCoreDiagnostics.framework/Modules/module.modulemap
+Pods/FirebaseAnalytics/Frameworks/FirebaseNanoPB.framework/FirebaseNanoPB
+Pods/FirebaseAuth/CHANGELOG.md
+Pods/FirebaseAuth/README.md
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/FirebaseAuth
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRActionCodeSettings.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAdditionalUserInfo.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuth.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthAPNSTokenType.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthDataResult.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthUIDelegate.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuthVersion.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIREmailAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIROAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthCredential.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUser.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserMetadata.h
+Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Modules/module.modulemap
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/FirebaseCore
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h
+Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap
+Pods/FirebaseInstanceID/CHANGELOG.md
+Pods/FirebaseInstanceID/README.md
+Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/FirebaseInstanceID
+Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h
+Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h
+Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap
+Pods/GoogleToolboxForMac/GTMDefines.h
+Pods/GoogleToolboxForMac/LICENSE
+Pods/GoogleToolboxForMac/README.md
+Pods/GoogleToolboxForMac/DebugUtils/GTMDebugSelectorValidation.h
+Pods/GoogleToolboxForMac/DebugUtils/GTMDebugThreadValidation.h
+Pods/GoogleToolboxForMac/DebugUtils/GTMMethodCheck.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.m
+Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.m
+Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.h
+Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.m
+Pods/GTMSessionFetcher/LICENSE
+Pods/GTMSessionFetcher/README.md
+Pods/GTMSessionFetcher/Source/GTMSessionFetcher.h
+Pods/GTMSessionFetcher/Source/GTMSessionFetcher.m
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.h
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.m
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherService.h
+Pods/GTMSessionFetcher/Source/GTMSessionFetcherService.m
+Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.h
+Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.m
+Pods/Headers/Private/Firebase/Firebase.h
+Pods/Headers/Public/Firebase/Firebase.h
+Pods/nanopb/LICENSE.txt
+Pods/nanopb/pb.h
+Pods/nanopb/pb_common.c
+Pods/nanopb/pb_common.h
+Pods/nanopb/pb_decode.c
+Pods/nanopb/pb_decode.h
+Pods/nanopb/pb_encode.c
+Pods/nanopb/pb_encode.h
+Pods/nanopb/README.md
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/joshua.xcuserdatad/xcschemes/GoogleToolboxForMac.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/joshua.xcuserdatad/xcschemes/GTMSessionFetcher.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/joshua.xcuserdatad/xcschemes/nanopb.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/joshua.xcuserdatad/xcschemes/Pods-Chatme.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/joshua.xcuserdatad/xcschemes/Pods-ChatmeTests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/joshua.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-dummy.m
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-umbrella.h
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap
+Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.xcconfig
+Pods/Target Support Files/GoogleToolboxForMac/Info.plist
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher-dummy.m
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher-prefix.pch
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher-umbrella.h
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher.modulemap
+Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher.xcconfig
+Pods/Target Support Files/GTMSessionFetcher/Info.plist
+Pods/Target Support Files/nanopb/Info.plist
+Pods/Target Support Files/nanopb/nanopb-dummy.m
+Pods/Target Support Files/nanopb/nanopb-prefix.pch
+Pods/Target Support Files/nanopb/nanopb-umbrella.h
+Pods/Target Support Files/nanopb/nanopb.modulemap
+Pods/Target Support Files/nanopb/nanopb.xcconfig
+Pods/Target Support Files/Pods-Chatme/Info.plist
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme-acknowledgements.markdown
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme-acknowledgements.plist
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme-dummy.m
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme-frameworks.sh
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme-resources.sh
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme-umbrella.h
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme.debug.xcconfig
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme.modulemap
+Pods/Target Support Files/Pods-Chatme/Pods-Chatme.release.xcconfig
+Pods/Target Support Files/Pods-ChatmeTests/Info.plist
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-acknowledgements.markdown
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-acknowledgements.plist
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-dummy.m
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-frameworks.sh
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-resources.sh
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests-umbrella.h
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests.debug.xcconfig
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests.modulemap
+Pods/Target Support Files/Pods-ChatmeTests/Pods-ChatmeTests.release.xcconfig
