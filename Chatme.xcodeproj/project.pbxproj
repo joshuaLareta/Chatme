@@ -16,10 +16,14 @@
 		4229550A200337B50075BD12 /* JLConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42295509200337B50075BD12 /* JLConversationListViewController.swift */; };
 		4229550D200339AA0075BD12 /* JLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229550C200339AA0075BD12 /* JLLoginViewController.swift */; };
 		4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229550E200339D10075BD12 /* JLRegistrationViewController.swift */; };
-		4229551220033F390075BD12 /* JLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229551120033F390075BD12 /* JLBaseViewController.swift */; };
+		4229551220033F390075BD12 /* JLLoginAndRegBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229551120033F390075BD12 /* JLLoginAndRegBaseViewController.swift */; };
 		422955152003900D0075BD12 /* JLRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422955142003900D0075BD12 /* JLRegistrationManager.swift */; };
 		424ACF042003A87A007B4C15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */; };
 		424ACF062003C084007B4C15 /* JLLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF052003C084007B4C15 /* JLLoginManager.swift */; };
+		424ACF0B2004A9E7007B4C15 /* JLContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF0A2004A9E7007B4C15 /* JLContactsViewController.swift */; };
+		424ACF0D2004AF00007B4C15 /* JLTableViewBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF0C2004AF00007B4C15 /* JLTableViewBaseViewController.swift */; };
+		424ACF102004C136007B4C15 /* JLContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF0F2004C136007B4C15 /* JLContactsManager.swift */; };
+		424ACF132004C581007B4C15 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF122004C581007B4C15 /* FirebaseManager.swift */; };
 		882FCB257B749C9C642ECB8F /* Pods_Chatme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC11586979961BF0D6D634 /* Pods_Chatme.framework */; };
 		F971242B23D020ED03B42B8E /* Pods_ChatmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,10 +56,14 @@
 		42295509200337B50075BD12 /* JLConversationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLConversationListViewController.swift; path = JLConversationListViewController/JLConversationListViewController.swift; sourceTree = "<group>"; };
 		4229550C200339AA0075BD12 /* JLLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLLoginViewController.swift; path = LoginAndRegistration/JLLoginViewController.swift; sourceTree = "<group>"; };
 		4229550E200339D10075BD12 /* JLRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLRegistrationViewController.swift; path = LoginAndRegistration/JLRegistrationViewController.swift; sourceTree = "<group>"; };
-		4229551120033F390075BD12 /* JLBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLBaseViewController.swift; sourceTree = "<group>"; };
+		4229551120033F390075BD12 /* JLLoginAndRegBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginAndRegBaseViewController.swift; sourceTree = "<group>"; };
 		422955142003900D0075BD12 /* JLRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLRegistrationManager.swift; sourceTree = "<group>"; };
 		424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		424ACF052003C084007B4C15 /* JLLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginManager.swift; sourceTree = "<group>"; };
+		424ACF0A2004A9E7007B4C15 /* JLContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLContactsViewController.swift; sourceTree = "<group>"; };
+		424ACF0C2004AF00007B4C15 /* JLTableViewBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLTableViewBaseViewController.swift; sourceTree = "<group>"; };
+		424ACF0F2004C136007B4C15 /* JLContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLContactsManager.swift; sourceTree = "<group>"; };
+		424ACF122004C581007B4C15 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD2DDC0B2D70BCE93920072 /* Pods-Chatme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chatme/Pods-Chatme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,9 +120,12 @@
 		422954E5200333950075BD12 /* Chatme */ = {
 			isa = PBXGroup;
 			children = (
+				424ACF112004C56B007B4C15 /* FirebaseManager */,
+				424ACF092004A30C007B4C15 /* SettingsViewController */,
+				424ACF082004A2FD007B4C15 /* ContactsViewController */,
 				4229551020033F180075BD12 /* BaseViewController */,
 				4229550B200339750075BD12 /* LoginAndRegistration */,
-				42295506200336730075BD12 /* chatViewController */,
+				42295506200336730075BD12 /* ChatViewController */,
 				422954E6200333950075BD12 /* AppDelegate.swift */,
 				422954E8200333950075BD12 /* RootViewController.swift */,
 				422954ED200333950075BD12 /* Assets.xcassets */,
@@ -134,13 +145,13 @@
 			path = ChatmeTests;
 			sourceTree = "<group>";
 		};
-		42295506200336730075BD12 /* chatViewController */ = {
+		42295506200336730075BD12 /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
 				422955072003377E0075BD12 /* JLConversationViewController.swift */,
 				42295509200337B50075BD12 /* JLConversationListViewController.swift */,
 			);
-			path = chatViewController;
+			path = ChatViewController;
 			sourceTree = "<group>";
 		};
 		4229550B200339750075BD12 /* LoginAndRegistration */ = {
@@ -156,7 +167,8 @@
 		4229551020033F180075BD12 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4229551120033F390075BD12 /* JLBaseViewController.swift */,
+				4229551120033F390075BD12 /* JLLoginAndRegBaseViewController.swift */,
+				424ACF0C2004AF00007B4C15 /* JLTableViewBaseViewController.swift */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -168,6 +180,38 @@
 				424ACF052003C084007B4C15 /* JLLoginManager.swift */,
 			);
 			path = JLAuthManagers;
+			sourceTree = "<group>";
+		};
+		424ACF082004A2FD007B4C15 /* ContactsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				424ACF0E2004C11C007B4C15 /* JLContactsManager */,
+				424ACF0A2004A9E7007B4C15 /* JLContactsViewController.swift */,
+			);
+			path = ContactsViewController;
+			sourceTree = "<group>";
+		};
+		424ACF092004A30C007B4C15 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		424ACF0E2004C11C007B4C15 /* JLContactsManager */ = {
+			isa = PBXGroup;
+			children = (
+				424ACF0F2004C136007B4C15 /* JLContactsManager.swift */,
+			);
+			path = JLContactsManager;
+			sourceTree = "<group>";
+		};
+		424ACF112004C56B007B4C15 /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				424ACF122004C581007B4C15 /* FirebaseManager.swift */,
+			);
+			path = FirebaseManager;
 			sourceTree = "<group>";
 		};
 		5E8BE12AB88A6A53A2B5185E /* Pods */ = {
@@ -328,12 +372,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Chatme/Pods-Chatme-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,14 +442,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424ACF132004C581007B4C15 /* FirebaseManager.swift in Sources */,
 				422954E9200333950075BD12 /* RootViewController.swift in Sources */,
+				424ACF0D2004AF00007B4C15 /* JLTableViewBaseViewController.swift in Sources */,
 				4229550D200339AA0075BD12 /* JLLoginViewController.swift in Sources */,
 				4229550A200337B50075BD12 /* JLConversationListViewController.swift in Sources */,
 				4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */,
-				4229551220033F390075BD12 /* JLBaseViewController.swift in Sources */,
+				4229551220033F390075BD12 /* JLLoginAndRegBaseViewController.swift in Sources */,
+				424ACF0B2004A9E7007B4C15 /* JLContactsViewController.swift in Sources */,
 				422955152003900D0075BD12 /* JLRegistrationManager.swift in Sources */,
 				422954E7200333950075BD12 /* AppDelegate.swift in Sources */,
 				424ACF062003C084007B4C15 /* JLLoginManager.swift in Sources */,
+				424ACF102004C136007B4C15 /* JLContactsManager.swift in Sources */,
 				422955082003377E0075BD12 /* JLConversationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

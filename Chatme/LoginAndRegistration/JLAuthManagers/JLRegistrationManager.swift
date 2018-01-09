@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import FirebaseAuth
 
-typealias completionBlock = ((_ data: Any?, _ error: Error?)->Void)?
+typealias CompletionBlock = ((_ data: Any?, _ error: Error?)->Void)?
 
 protocol AuthenticationProtocol {
     func validate () -> Bool
@@ -23,7 +22,11 @@ struct RegistrationError: Error {
 }
 
 class JLRegistrationManager: AuthenticationProtocol {
-    var completion: completionBlock?
+    var completion: CompletionBlock?
+    var firebaseManager: FirebaseManager = {
+        let tempFirebaseManager = FirebaseManager()
+        return tempFirebaseManager
+    }()
     
     private var emailString: String? = nil
     private var passwordString: String? = nil
@@ -64,19 +67,7 @@ class JLRegistrationManager: AuthenticationProtocol {
             return
         }
         
-        // validate input
-        Auth.auth().createUser(withEmail: emailString!, password: passwordString!) {[weak self] (user, error) in
-            guard error == nil else {
-                if let complete = self?.completion {
-                    complete?(nil, error)
-                }
-                return
-            }
-            
-            if let complete = self?.completion { // if completion block is not nil then send it back to the caller
-                complete?(user,nil)
-            }
-            print ("a new user has been created")
-        }
+        // register to firebase
+        firebaseManager.registerAccount(emailAddress: emailString!, password: passwordString!, completionBlock: completion)
     }
 }

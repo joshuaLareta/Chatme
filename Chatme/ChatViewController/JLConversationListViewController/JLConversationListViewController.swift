@@ -10,8 +10,21 @@ import UIKit
 
 class JLConversationListViewController: UIViewController {
     
+    let chatListTableview = UITableView(frame: .zero, style: .plain)
+    
+     init() {
+        super.init(nibName: nil, bundle: nil)
+        self.title = NSLocalizedString("Conversations", comment: "Chat title")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
+        
         // Do any additional setup after loading the view.
     }
 

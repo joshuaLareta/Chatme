@@ -8,38 +8,15 @@
 
 import UIKit
 
-class JLRegistrationViewController: JLBaseViewController {
+class JLRegistrationViewController: JLLoginAndRegBaseViewController {
     
     init() { // default initializer
         super.init(nibName: nil, bundle: nil)
     }
     
-    init(withCompletion completion: completionBlock?) { // initialize with a completion block
+    init(withCompletion completion: CompletionBlock?) { // initialize with a completion block
         super.init(nibName: nil, bundle: nil)
-        registrationManager.completion = {[weak self](data, error) in
-            guard error == nil else {
-                var errorAlertController: UIAlertController
-                var errorAction: UIAlertAction
-                if error is RegistrationError {
-                    let regError = error as? RegistrationError
-                     errorAlertController = UIAlertController(title: regError?.errorTitle, message: regError?.errorDescription, preferredStyle: .alert)
-                     errorAction = UIAlertAction(title: regError?.errorCancelButtonTitle, style: .cancel, handler: nil)
-   
-                } else {// error is a regular error object
-                    errorAlertController = UIAlertController(title: NSLocalizedString("Error", comment: "Encountered an error"), message: error?.localizedDescription, preferredStyle: .alert)
-                    errorAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok for alert cancel button"), style: .cancel, handler: nil)
-                }
-                
-                errorAlertController.addAction(errorAction)
-                self?.present(errorAlertController, animated: true, completion: nil)
-                print("encountered an error during registration")
-                return
-            }
-            // proceed to call the registered completion
-            if let complete = completion {
-                complete?(data, nil)
-            }
-        }
+        completionBlock = completion
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -134,6 +111,7 @@ class JLRegistrationViewController: JLBaseViewController {
     
     // triggers when back button is pressed
     @objc func backAction () {
+        self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -141,8 +119,35 @@ class JLRegistrationViewController: JLBaseViewController {
     @objc func registerAction () {
         
         // force close keyboard
-       
+       self.view.endEditing(true)
         // update the values
+        registrationManager.completion = {[weak self](data, error) in
+            guard error == nil else {
+                var errorAlertController: UIAlertController
+                var errorAction: UIAlertAction
+                if error is RegistrationError {
+                    let regError = error as? RegistrationError
+                    errorAlertController = UIAlertController(title: regError?.errorTitle, message: regError?.errorDescription, preferredStyle: .alert)
+                    errorAction = UIAlertAction(title: regError?.errorCancelButtonTitle, style: .cancel, handler: nil)
+                    
+                } else {// error is a regular error object
+                    errorAlertController = UIAlertController(title: NSLocalizedString("Error", comment: "Encountered an error"), message: error?.localizedDescription, preferredStyle: .alert)
+                    errorAction = UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok for alert cancel button"), style: .cancel, handler: nil)
+                }
+                
+                errorAlertController.addAction(errorAction)
+                self?.present(errorAlertController, animated: true, completion: nil)
+                print("encountered an error during registration")
+                return
+            }
+            // proceed to call the registered completion
+            // dismiss the current view
+            self?.dismiss(animated: false, completion: nil)
+            // pass the data to the completion and perform the necessary logging in of the user
+            if let complete = self?.completionBlock {
+                complete?(data, nil)
+            }
+        }
         registrationManager.update(email: emailAddressTextfield.text, password: passwordTextfield.text, confirmPassword: confirmPasswordTextfield.text)
         // validate input
         registrationManager.registerAccountRequest() // begin registration

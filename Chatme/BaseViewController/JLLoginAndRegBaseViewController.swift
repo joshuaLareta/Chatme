@@ -1,5 +1,5 @@
 //
-//  JLBaseViewController.swift
+//  JLLoginAndRegBaseViewController.swift
 //  Chatme
 //
 //  Created by Joshua on 8/1/18.
@@ -17,8 +17,11 @@ import UIKit
       func didRegisterAction()
 }
 
-class JLBaseViewController: UIViewController {
+class JLLoginAndRegBaseViewController: UIViewController {
     
+    // completion block property
+    var completionBlock: CompletionBlock?
+
     /*
          Will be the view after the mainView this is the parent of the contentView.
          Need to make the contentView scroll whenever it is being hidden by the keyboard
@@ -140,8 +143,8 @@ class JLBaseViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // register for keyboard notification
-        NotificationCenter.default.addObserver(self, selector: #selector(JLBaseViewController.keyboardDidShow(_:)), name: Notification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(JLBaseViewController.keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(JLLoginAndRegBaseViewController.keyboardDidShow(_:)), name: Notification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(JLLoginAndRegBaseViewController.keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
@@ -151,7 +154,7 @@ class JLBaseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //add tap gesture for closing of keyboard when user tap's main screen
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(JLBaseViewController.tapGestureOnMainScreenToCloseKeyboard))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(JLLoginAndRegBaseViewController.tapGestureOnMainScreenToCloseKeyboard))
         self.view.addGestureRecognizer(tapGesture) // add it to the main view to be able to be triggered
     }
     
@@ -159,8 +162,8 @@ class JLBaseViewController: UIViewController {
     @objc func tapGestureOnMainScreenToCloseKeyboard() {
         // force close keyboard
         self.view.endEditing(true)
-
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

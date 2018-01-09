@@ -8,10 +8,7 @@
 
 import UIKit
 
-class JLLoginViewController: JLBaseViewController,JLLoginProtocol, JLRegisterProtocol {
-    
-    var completionBlock: completionBlock?
-
+class JLLoginViewController: JLLoginAndRegBaseViewController,JLLoginProtocol, JLRegisterProtocol {
     //login button init
     let loginButton: UIButton = {
         let tempLoginButton = UIButton(type: .custom)
@@ -51,9 +48,8 @@ class JLLoginViewController: JLBaseViewController,JLLoginProtocol, JLRegisterPro
         super.init(nibName: nil, bundle: nil)
     }
     
-    init (withCompletion completion: completionBlock?){
-        super.init(nibName: nil, bundle: nil)
-        completionBlock = completion // save a completion block
+    deinit {
+        print("de init JLLoginViewController")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,6 +64,7 @@ class JLLoginViewController: JLBaseViewController,JLLoginProtocol, JLRegisterPro
         
         self.setupConstraints() // call the setup constraints
     }
+    
     
     private func setupConstraints() {
         

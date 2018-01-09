@@ -7,10 +7,13 @@
 //
 
 import Foundation
-import FirebaseAuth
 
 class JLLoginManager: AuthenticationProtocol {
-    var completion: completionBlock?
+    var completion: CompletionBlock?
+    var firebaseManager: FirebaseManager = {
+        let tempFirebaseManager = FirebaseManager()
+        return tempFirebaseManager
+    }()
     private var emailAddressString: String? = nil
     private var passwordString: String? = nil
     
@@ -19,7 +22,7 @@ class JLLoginManager: AuthenticationProtocol {
     }
     
     // initializer with a completion block
-    init(withCompletion complete: completionBlock?) {
+    init(withCompletion complete: CompletionBlock?) {
         completion = complete
     }
     
@@ -45,19 +48,7 @@ class JLLoginManager: AuthenticationProtocol {
         guard validate() == true else {
             return
         }
-        
-        Auth.auth().signIn(withEmail: emailAddressString!, password: passwordString!) { [weak self] (user, error) in
-            guard error == nil else {
-                if let complete = self?.completion {
-                    complete?(nil, error)
-                }
-                return
-            }
-
-            if let complete = self?.completion { // if completion block is not nil then send it back to the caller
-                complete?(user,nil)
-            }
-            print("successfully signed in")
-        }
+        // firebase manager authenticate
+        firebaseManager.auth(emailAddress: emailAddressString!, password: passwordString!, completionBlock: completion)
     }
 }
