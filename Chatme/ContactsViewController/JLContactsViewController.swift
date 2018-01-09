@@ -9,7 +9,7 @@
 import UIKit
 
 class JLContactsViewController: JLTableViewBaseViewController {
-    
+    var contactStartConversationBlock: ((Bool) -> Void)?
     var contactsManager: JLContactsManager = {
         let tempContactsManager = JLContactsManager()
         return tempContactsManager
@@ -72,8 +72,23 @@ class JLContactsViewController: JLTableViewBaseViewController {
         tableView.deselectRow(at: indexPath, animated: true) // just deselect
         
         let startConversationAlert = UIAlertController(title:"", message: NSLocalizedString("Start a conversation with \"\(self.contactsManager.contactList[indexPath.row])\"", comment: "Confirm if user wants to converse with the user"), preferredStyle: .alert)
-        let conversationConfirmAction = UIAlertAction(title: NSLocalizedString("Yes", comment: "Confirm conversation start"), style: .default) { (action) in
-            
+        let conversationConfirmAction = UIAlertAction(title: NSLocalizedString("Yes", comment: "Confirm conversation start"), style: .default) {[weak self] (action) in
+            self?.contactsManager.startConversation(with: (self?.contactsManager.contactList[indexPath.row])!, conversationStartedBlock: {
+                // push contacts vc
+                if let startConversation = self?.contactStartConversationBlock {
+                    DispatchQueue.main.async {
+                         startConversation(true)
+                    }
+                }
+                
+                let conversationViewController = JLConversationViewController()
+                conversationViewController.hasFinishedConversationBlock = {[weak self] in
+                    if let startConversation = self?.contactStartConversationBlock {
+                        startConversation(false)
+                    }
+                }
+                self?.navigationController?.pushViewController(conversationViewController, animated: true)
+            })
         }
         
         let conversationCancelAction = UIAlertAction(title: NSLocalizedString("No", comment: "Cancel conversation"), style: .cancel, handler: nil)

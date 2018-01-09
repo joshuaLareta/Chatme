@@ -24,7 +24,9 @@ class FirebaseManager {
         Auth.auth().createUser(withEmail: email, password: pword) {[weak self] (user, error) in
             guard error == nil else {
                 if let complete = completion {
-                    complete?(nil, error)
+                    DispatchQueue.main.async {
+                        complete?(nil, error)
+                    }
                 }
                 return
             }
@@ -37,7 +39,9 @@ class FirebaseManager {
             self?.ref.child("users").child("info").child(user!.uid).child("online").setValue(true)
             
             if let complete = completion { // if completion block is not nil then send it back to the caller
-                complete?(user,nil)
+                DispatchQueue.main.async {
+                    complete?(user,nil)
+                }
             }
             print ("a new user has been created")
         }
@@ -54,7 +58,9 @@ class FirebaseManager {
             }
             self?.ref.child("users").child("info").child(user!.uid).child("online").setValue(true)
             if let complete = completion { // if completion block is not nil then send it back to the caller
-                complete?(user,nil)
+                DispatchQueue.main.async {
+                    complete?(user,nil)
+                }
             }
             print("successfully signed in")
         }
@@ -75,7 +81,9 @@ class FirebaseManager {
                 }
             }
             if let complete = completionBlock {
-                complete?(data,nil)
+                DispatchQueue.main.async {
+                    complete?(data,nil)
+                }
                 
             }
         }
@@ -84,6 +92,28 @@ class FirebaseManager {
     // NOTE: implement pagination request
     func contactListFeed (completion completionBlock: CompletionBlock?) {
        
+    }
+    
+    //Method for starting a conversation
+    func startConversation(with email:String, completion completeBlock: (()->Void)?) {
+        let uid = Auth.auth().currentUser?.uid
+    
+        ref.child("users").child("info").queryOrdered(byChild: "email").queryEqual(toValue: email).observeSingleEvent(of: .value) {[weak self] (snapshot) in
+            print("the snapshot \(snapshot.key,snapshot)")
+            if let dictionary = snapshot.value as? Dictionary<AnyHashable,Any> {
+                let keys = Array(dictionary.keys) as! Array<String>
+                let UIDOfUserToChat = keys[0] // get id from top of the key
+                
+                //update the conversations
+                self?.ref.child("users").child("conversations").child(uid!).child(UIDOfUserToChat).child("email").setValue(email)
+                
+                if let complete = completeBlock {
+                    DispatchQueue.main.async {
+                         complete()
+                    }
+                }
+            }
+        }
     }
     
 }

@@ -12,21 +12,12 @@ class RootViewController: UIViewController {
     
     let tabController: UITabBarController = {
         let tempTabController = UITabBarController()
+        tempTabController.hidesBottomBarWhenPushed = true
         return tempTabController
     }()
     
-    let conversationListNavCon: UINavigationController = {
-        let tempConversationListVC = JLConversationListViewController()
-        let tempConversationListNavCon = UINavigationController(rootViewController: tempConversationListVC)
-        return tempConversationListNavCon
-    }()
-    
-    let contactsNavCon: UINavigationController = {
-        let tempContactsVC = JLContactsViewController()
-        let tempContactsNavCon = UINavigationController(rootViewController: tempContactsVC)
-        return tempContactsNavCon
-    }()
-    
+    var contactsNavCon: UINavigationController?
+    var conversationListNavCon: UINavigationController?
     var loginNavigationController: UINavigationController?
     
     override func viewDidLoad() {
@@ -35,8 +26,18 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = .black
         self.navigationController?.setNavigationBarHidden(true, animated: false) // no need to show the navigationItemBar
         
+        // initialize contactsVC
+        let contactsVC = JLContactsViewController()
+        contactsVC.contactStartConversationBlock = {[weak self](hasEndedConversation) in
+            self?.tabController.tabBar.isHidden = hasEndedConversation
+        }
+        contactsNavCon = UINavigationController(rootViewController: contactsVC)
+        
+        let conversationListVC = JLConversationListViewController()
+        conversationListNavCon = UINavigationController(rootViewController: conversationListVC)
+        
         // setup tabController
-        tabController.setViewControllers([contactsNavCon,conversationListNavCon], animated: false)
+        tabController.setViewControllers([contactsNavCon!,conversationListNavCon!], animated: false)
         
         self.navigationController?.present(tabController, animated: false, completion: nil) // present tabcontroller as the base
         

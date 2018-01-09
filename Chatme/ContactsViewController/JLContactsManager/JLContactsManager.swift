@@ -42,4 +42,8 @@ class JLContactsManager {
         listRequest(completion: completionBlock)
     }
     
+    func startConversation(with email:String, conversationStartedBlock: (()->Void)?){
+        firebaseManager.startConversation(with: email,completion: conversationStartedBlock)
+    }
+    
 }

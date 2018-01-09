@@ -47,6 +47,8 @@ class JLLoginAndRegBaseViewController: UIViewController {
         tempEmailAddressTextField.translatesAutoresizingMaskIntoConstraints = false
         tempEmailAddressTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Email Address", comment: "email Address textfield placeholder"), attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
         tempEmailAddressTextField.textColor = .white
+        tempEmailAddressTextField.autocorrectionType = .no
+        tempEmailAddressTextField.autocapitalizationType = .none
         // add a bottom border via layer
         var bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: 49, width:(UIScreen.main.bounds.width-100), height: 0.5)
@@ -176,10 +178,11 @@ class JLLoginAndRegBaseViewController: UIViewController {
     @objc func keyboardDidShow(_ notification: Notification){
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollingViewBottomGapConstraint.constant = -(keyboardSize.height)
-            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.4) {
                 let contentOffset = CGPoint(x: 0, y: 10)
                 self.mainScrollingView.setContentOffset(contentOffset, animated: false)
-            }, completion: nil)
+                self.view.layoutIfNeeded()
+            }
             
         } else {
             print("something went wrong and didn't managed to get any keyboardSize")
@@ -189,6 +192,9 @@ class JLLoginAndRegBaseViewController: UIViewController {
     
     @objc func keyboardWillHide(_ notification: Notification){
         scrollingViewBottomGapConstraint.constant = 0 // just assign 0 to the constraint's constant
+        UIView.animate(withDuration: 0.4) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func didReceiveMemoryWarning() {
