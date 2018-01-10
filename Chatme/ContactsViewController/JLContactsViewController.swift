@@ -73,7 +73,7 @@ class JLContactsViewController: JLTableViewBaseViewController {
         
         let startConversationAlert = UIAlertController(title:"", message: NSLocalizedString("Start a conversation with \"\(self.contactsManager.contactList[indexPath.row])\"", comment: "Confirm if user wants to converse with the user"), preferredStyle: .alert)
         let conversationConfirmAction = UIAlertAction(title: NSLocalizedString("Yes", comment: "Confirm conversation start"), style: .default) {[weak self] (action) in
-            self?.contactsManager.startConversation(with: (self?.contactsManager.contactList[indexPath.row])!, conversationStartedBlock: {
+            self?.contactsManager.initiateConversation(with: (self?.contactsManager.contactList[indexPath.row])!, conversationStartedBlock: { (client, you, tempChatId) in
                 // push contacts vc
                 if let startConversation = self?.contactStartConversationBlock {
                     DispatchQueue.main.async {
@@ -81,7 +81,7 @@ class JLContactsViewController: JLTableViewBaseViewController {
                     }
                 }
                 
-                let conversationViewController = JLConversationViewController()
+                let conversationViewController = JLConversationViewController(withClient: client, andYou: you, andChatId: tempChatId)
                 conversationViewController.hasFinishedConversationBlock = {[weak self] in
                     if let startConversation = self?.contactStartConversationBlock {
                         startConversation(false)
@@ -90,9 +90,10 @@ class JLContactsViewController: JLTableViewBaseViewController {
                 self?.navigationController?.pushViewController(conversationViewController, animated: true)
             })
         }
-        
+        //  cancel action for the confirmation alert
         let conversationCancelAction = UIAlertAction(title: NSLocalizedString("No", comment: "Cancel conversation"), style: .cancel, handler: nil)
         
+        // add the action to the conversation alert
         startConversationAlert.addAction(conversationConfirmAction)
         startConversationAlert.addAction(conversationCancelAction)
         self.present(startConversationAlert, animated: true, completion: nil)

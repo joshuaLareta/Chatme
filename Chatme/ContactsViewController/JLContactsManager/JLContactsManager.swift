@@ -42,8 +42,18 @@ class JLContactsManager {
         listRequest(completion: completionBlock)
     }
     
-    func startConversation(with email:String, conversationStartedBlock: (()->Void)?){
-        firebaseManager.startConversation(with: email,completion: conversationStartedBlock)
+    func initiateConversation(with email:String, conversationStartedBlock: ((_ client: Client, _ you: Client, _ tempChatId: String)->Void)?){
+        firebaseManager.initiateConversation(with: email) { [weak self] (uid, email, tempChatId) in
+            
+            let client = Client(email: email!, uid: uid)
+            let userTuple = self?.firebaseManager.currentUser()
+            let you = Client(email: userTuple!.email, uid: userTuple!.uid)
+            
+            // return the two clients created
+            if let complete = conversationStartedBlock {
+                complete(client, you, tempChatId)
+            }
+        }
     }
     
 }

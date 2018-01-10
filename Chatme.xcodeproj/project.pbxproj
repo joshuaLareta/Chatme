@@ -24,6 +24,8 @@
 		424ACF0D2004AF00007B4C15 /* JLTableViewBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF0C2004AF00007B4C15 /* JLTableViewBaseViewController.swift */; };
 		424ACF102004C136007B4C15 /* JLContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF0F2004C136007B4C15 /* JLContactsManager.swift */; };
 		424ACF132004C581007B4C15 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF122004C581007B4C15 /* FirebaseManager.swift */; };
+		424ACF1620052FD7007B4C15 /* JLChatListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF1520052FD7007B4C15 /* JLChatListManager.swift */; };
+		424ACF1820052FF3007B4C15 /* JLConversationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF1720052FF3007B4C15 /* JLConversationManager.swift */; };
 		882FCB257B749C9C642ECB8F /* Pods_Chatme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DC11586979961BF0D6D634 /* Pods_Chatme.framework */; };
 		F971242B23D020ED03B42B8E /* Pods_ChatmeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		424ACF0C2004AF00007B4C15 /* JLTableViewBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLTableViewBaseViewController.swift; sourceTree = "<group>"; };
 		424ACF0F2004C136007B4C15 /* JLContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLContactsManager.swift; sourceTree = "<group>"; };
 		424ACF122004C581007B4C15 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		424ACF1520052FD7007B4C15 /* JLChatListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLChatListManager.swift; sourceTree = "<group>"; };
+		424ACF1720052FF3007B4C15 /* JLConversationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLConversationManager.swift; sourceTree = "<group>"; };
 		6B4BC16E8DB3323D93752E7B /* Pods_ChatmeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatmeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD2DDC0B2D70BCE93920072 /* Pods-Chatme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatme.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chatme/Pods-Chatme.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +152,7 @@
 		42295506200336730075BD12 /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				424ACF1420052FB3007B4C15 /* ChatManager */,
 				422955072003377E0075BD12 /* JLConversationViewController.swift */,
 				42295509200337B50075BD12 /* JLConversationListViewController.swift */,
 			);
@@ -212,6 +217,15 @@
 				424ACF122004C581007B4C15 /* FirebaseManager.swift */,
 			);
 			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
+		424ACF1420052FB3007B4C15 /* ChatManager */ = {
+			isa = PBXGroup;
+			children = (
+				424ACF1520052FD7007B4C15 /* JLChatListManager.swift */,
+				424ACF1720052FF3007B4C15 /* JLConversationManager.swift */,
+			);
+			path = ChatManager;
 			sourceTree = "<group>";
 		};
 		5E8BE12AB88A6A53A2B5185E /* Pods */ = {
@@ -448,9 +462,11 @@
 				4229550D200339AA0075BD12 /* JLLoginViewController.swift in Sources */,
 				4229550A200337B50075BD12 /* JLConversationListViewController.swift in Sources */,
 				4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */,
+				424ACF1820052FF3007B4C15 /* JLConversationManager.swift in Sources */,
 				4229551220033F390075BD12 /* JLLoginAndRegBaseViewController.swift in Sources */,
 				424ACF0B2004A9E7007B4C15 /* JLContactsViewController.swift in Sources */,
 				422955152003900D0075BD12 /* JLRegistrationManager.swift in Sources */,
+				424ACF1620052FD7007B4C15 /* JLChatListManager.swift in Sources */,
 				422954E7200333950075BD12 /* AppDelegate.swift in Sources */,
 				424ACF062003C084007B4C15 /* JLLoginManager.swift in Sources */,
 				424ACF102004C136007B4C15 /* JLContactsManager.swift in Sources */,
