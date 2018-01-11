@@ -46,14 +46,14 @@ Sample chat project using firebase
     |           |-- + clientEmail value
     |
     |-- + user node
-    |   |-- + info node
-    |   |   |-- + clientUID node
-    |   |       |-- + email value
-    |   |       |-- + uid value
-    |   |       |-- + online value
-    |   |
-    |   |-- + list node
-    |       |-- + email value
+        |-- + info node
+        |   |-- + clientUID node
+        |       |-- + email value
+        |       |-- + uid value
+        |       |-- + online value
+        |
+        |-- + list node
+            |-- + email value
  
  
  # Steps in building
