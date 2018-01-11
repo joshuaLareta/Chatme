@@ -37,7 +37,7 @@ class RootViewController: UIViewController {
         conversationListNavCon = UINavigationController(rootViewController: conversationListVC)
         
         // setup tabController
-        tabController.setViewControllers([contactsNavCon!,conversationListNavCon!], animated: false)
+        tabController.setViewControllers([contactsNavCon!], animated: false)
         
         self.navigationController?.present(tabController, animated: false, completion: nil) // present tabcontroller as the base
         
