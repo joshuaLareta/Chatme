@@ -60,7 +60,7 @@ class JLConversationManager {
     /// start the listening process for the current conversation
     func startConversationListener(withCallback callback: ((_ addedMessage: Dictionary<AnyHashable,Any>?,_ isUpdate: Bool)->Void)?) {
         startConversation { [weak self] in
-           self?.firebaseManager.conversationListener(conversationId: (self?.conversation.chatId)!) { [weak self] (messages, isAnUpdate) in
+            self?.firebaseManager.conversationListener(withYourUID: (self?.conversation.you.uid)!, andClientUID: (self?.conversation.client.uid)!, andConversationId: (self?.conversation.chatId)!, conversations:{ [weak self] (messages, isAnUpdate) in
             self?.hasStartedListening = true
             var message:Dictionary<AnyHashable,Any>? = nil
             var _isAnUpdate = isAnUpdate
@@ -96,7 +96,7 @@ class JLConversationManager {
                         completion(message, _isAnUpdate)
                     }
                 }
-            }
+            })
         }
     }
     
@@ -108,6 +108,6 @@ class JLConversationManager {
     }
     
     func stopUpdatingMessage() {
-        firebaseManager.removeMessageListener(fromChatId: conversation.chatId)
+        firebaseManager.removeConversationListener(withYourUID: conversation.you.uid, andClientUID: conversation.client.uid, fromChatId: conversation.chatId)
     }
 }

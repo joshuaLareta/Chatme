@@ -20,6 +20,7 @@ class FirebaseManager {
     }()
     
     var messageObserver: DatabaseHandle!
+    var conversationObserver: DatabaseHandle!
     
     /**
      
@@ -145,15 +146,15 @@ class FirebaseManager {
                 // create the conversation for both user so they can have the same chatID
                 
                 // your conversation info
-                self?.ref.child("conversations-info").child(String(chatId.hashValue)).child("initiatorClient").setValue(yourEmail)
-                self?.ref.child("conversations-info").child(String(chatId.hashValue)).child("client").setValue(email)
-                self?.ref.child("conversations-info").child(String(chatId.hashValue)).child("chatId").setValue(String(chatId.hashValue))
+                self?.ref.child("conversations-info").child(chatId).child("initiatorClient").setValue(yourEmail)
+                self?.ref.child("conversations-info").child(chatId).child("client").setValue(email)
+                self?.ref.child("conversations-info").child(chatId).child("chatId").setValue(chatId)
                 
-                self?.ref.child("conversations").child(yourUID!).child(uid).child("chatId").setValue(String(chatId.hashValue))
+                self?.ref.child("conversations").child(yourUID!).child(uid).child("chatId").setValue(chatId)
                 self?.ref.child("conversations").child(yourUID!).child(uid).child("client1").setValue(uid)
                 self?.ref.child("conversations").child(yourUID!).child(uid).child("client2").setValue(yourUID)
                 
-                self?.ref.child("conversations").child(uid).child(yourUID!).child("chatId").setValue(String(chatId.hashValue))
+                self?.ref.child("conversations").child(uid).child(yourUID!).child("chatId").setValue(chatId)
                 self?.ref.child("conversations").child(uid).child(yourUID!).child("client1").setValue(uid)
                 self?.ref.child("conversations").child(uid).child(yourUID!).child("client2").setValue(yourUID)
             } else {
@@ -174,8 +175,11 @@ class FirebaseManager {
         return (Auth.auth().currentUser!.uid, Auth.auth().currentUser!.email!)
     }
     
-    func conversationListener(conversationId chatId: String, conversations conversationCallback:((_ messages:[Dictionary<AnyHashable,Any>?], _ isUpdate: Bool)->Void)?) {
-        // fetch all existing messages
+    func conversationListener(withYourUID yourUID: String, andClientUID clientUID: String, andConversationId chatId: String, conversations conversationCallback:((_ messages:[Dictionary<AnyHashable,Any>?], _ isUpdate: Bool)->Void)?) {
+       
+        
+        //Note:: need to listen to conversation changes
+         // fetch all existing messages
         
         ref.child("messages").child(chatId).observeSingleEvent(of: .value) {(snapshot) in
             var messages: [Dictionary<AnyHashable,Any>?] = []
@@ -185,11 +189,11 @@ class FirebaseManager {
                 if let dictionaryOfMessages = snapshot.value as? Dictionary<AnyHashable,Any>{
                     for (_, value) in dictionaryOfMessages {
                         if let dictionaryValue = value as? Dictionary<AnyHashable,Any>{
-                             messages.append(dictionaryValue)
+                            messages.append(dictionaryValue)
                         }
                     }
                     // sort it out
-                   messages = messages.sorted(by: { $1!["time"] as! Int64 > $0!["time"] as! Int64 })
+                    messages = messages.sorted(by: { $1!["time"] as! Int64 > $0!["time"] as! Int64 })
                 }
             }
             
@@ -198,17 +202,20 @@ class FirebaseManager {
             }
         }
         
-        // get the changes one by one
-        messageObserver = ref.child("messages").child(chatId).queryLimited(toLast: 1).observe(.childAdded, with: { (snapshot) in
-            var message: [Dictionary<AnyHashable,Any>?] = []
-            if let dictionaryOfMessages = snapshot.value as? Dictionary<AnyHashable,Any>{
-                message.append(dictionaryOfMessages)
-            }
-            
-            if let callback = conversationCallback {
-                callback(message, true)
-            }
-        })
+            // get the changes one by one
+            self.messageObserver = self.ref.child("messages").child(chatId).queryLimited(toLast: 1).observe(.childAdded, with: { (snapshot) in
+                var message: [Dictionary<AnyHashable,Any>?] = []
+                if let dictionaryOfMessages = snapshot.value as? Dictionary<AnyHashable,Any>{
+                    message.append(dictionaryOfMessages)
+                }
+                
+                if let callback = conversationCallback {
+                    callback(message, true)
+                }
+            })
+        
+       
+       
     }
     
     // Method for sending the message to firebase server
@@ -224,7 +231,11 @@ class FirebaseManager {
      listener removal functions
      **/
     
-    func removeMessageListener(fromChatId chatId:String) {
+    private func removeMessageListener(fromChatId chatId:String) {
         ref.child("messages").child(chatId).removeObserver(withHandle: messageObserver!)
+    }
+    
+    func removeConversationListener(withYourUID yourUID:String, andClientUID clientUID: String, fromChatId chatId: String) {
+        removeMessageListener(fromChatId: chatId)
     }
 }
