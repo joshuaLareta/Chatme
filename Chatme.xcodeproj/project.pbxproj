@@ -62,6 +62,9 @@
 		4229551120033F390075BD12 /* JLLoginAndRegBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginAndRegBaseViewController.swift; sourceTree = "<group>"; };
 		422955142003900D0075BD12 /* JLRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLRegistrationManager.swift; sourceTree = "<group>"; };
 		422BB1612007445D00E109B1 /* JLChatConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLChatConversationTableViewCell.swift; sourceTree = "<group>"; };
+		422BB1642007858100E109B1 /* loginScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginScreenshot.png; sourceTree = "<group>"; };
+		422BB1652007858100E109B1 /* signupScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signupScreenshot.png; sourceTree = "<group>"; };
+		422BB1662007858200E109B1 /* conversationScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conversationScreenshot.png; sourceTree = "<group>"; };
 		424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		424ACF052003C084007B4C15 /* JLLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginManager.swift; sourceTree = "<group>"; };
 		424ACF0A2004A9E7007B4C15 /* JLContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLContactsViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		422954DA200333950075BD12 = {
 			isa = PBXGroup;
 			children = (
+				422BB1632007855E00E109B1 /* screenshots */,
 				422954E5200333950075BD12 /* Chatme */,
 				422954FA200333950075BD12 /* ChatmeTests */,
 				422954E4200333950075BD12 /* Products */,
@@ -196,6 +200,16 @@
 				422BB1612007445D00E109B1 /* JLChatConversationTableViewCell.swift */,
 			);
 			path = JLChatConversationTableViewCell;
+			sourceTree = "<group>";
+		};
+		422BB1632007855E00E109B1 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				422BB1642007858100E109B1 /* loginScreenshot.png */,
+				422BB1652007858100E109B1 /* signupScreenshot.png */,
+				422BB1662007858200E109B1 /* conversationScreenshot.png */,
+			);
+			path = screenshots;
 			sourceTree = "<group>";
 		};
 		424ACF082004A2FD007B4C15 /* ContactsViewController */ = {
