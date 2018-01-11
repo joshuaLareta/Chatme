@@ -205,20 +205,22 @@ class FirebaseManager {
             }
         }
         
-            // get the changes one by one
-            self.messageObserver = self.ref.child("messages").child(chatId).queryLimited(toLast: 1).observe(.childAdded, with: { (snapshot) in
-                var message: [Dictionary<AnyHashable,Any>?] = []
-                if let dictionaryOfMessages = snapshot.value as? Dictionary<AnyHashable,Any>{
-                    message.append(dictionaryOfMessages)
-                }
-                
-                if let callback = conversationCallback {
-                    callback(message, true)
-                }
+            // get the changes one by one with the observer. need to make sure that time is set before we retrieve the entire block
+            self.messageObserver = self.ref.child("messages").child(chatId).queryLimited(toLast: 1).observe(.childAdded, with: {[weak self] (snapshotTotal) in
+                self?.ref.child("messages").child(chatId).child("time").queryLimited(toLast: 1).observeSingleEvent(of: .value, with: {[weak self] (snapshotData) in
+                    self?.ref.child("messages").child(chatId).queryLimited(toLast: 1).observeSingleEvent(of: .childAdded, with: { (snapshot) in
+                        var message: [Dictionary<AnyHashable,Any>?] = []
+                        if let dictionaryOfMessages = snapshot.value as? Dictionary<AnyHashable,Any>{
+                            message.append(dictionaryOfMessages)
+                        }
+                        
+                        if let callback = conversationCallback {
+                            callback(message, true)
+                        }
+                    })
+                })
+              
             })
-        
-       
-       
     }
     
     // Method for sending the message to firebase server
