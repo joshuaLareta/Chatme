@@ -21,6 +21,7 @@ class FirebaseManager {
     
     var messageObserver: DatabaseHandle!
     var conversationObserver: DatabaseHandle!
+    var typingObserver: DatabaseHandle!
     
     /**
      
@@ -153,10 +154,12 @@ class FirebaseManager {
                 self?.ref.child("conversations").child(yourUID!).child(uid).child("chatId").setValue(chatId)
                 self?.ref.child("conversations").child(yourUID!).child(uid).child("client1").setValue(uid)
                 self?.ref.child("conversations").child(yourUID!).child(uid).child("client2").setValue(yourUID)
+                self?.ref.child("conversations").child(yourUID!).child(uid).child("isTyping").setValue(false)
                 
                 self?.ref.child("conversations").child(uid).child(yourUID!).child("chatId").setValue(chatId)
                 self?.ref.child("conversations").child(uid).child(yourUID!).child("client1").setValue(uid)
                 self?.ref.child("conversations").child(uid).child(yourUID!).child("client2").setValue(yourUID)
+                self?.ref.child("conversations").child(uid).child(yourUID!).child("isTyping").setValue(false)
             } else {
                 if let snap = snapshot.value as? Dictionary<AnyHashable,Any> {
                     chatId = snap["chatId"] as! String
@@ -237,5 +240,21 @@ class FirebaseManager {
     
     func removeConversationListener(withYourUID yourUID:String, andClientUID clientUID: String, fromChatId chatId: String) {
         removeMessageListener(fromChatId: chatId)
+        ref.child("conversations").child(clientUID).child(yourUID).child("isTyping").removeObserver(withHandle: typingObserver)
+    }
+    
+    func isTyping (withYourUID yourUID: String, andClientUID clientUID: String, andIsTyping isTyping: Bool) {
+         ref.child("conversations").child(yourUID).child(clientUID).child("isTyping").setValue(isTyping)
+    }
+    
+    func isTypingListener(withYourUID yourUID: String, andClientUID clientUID: String, andCallback callback: ((_ isTyping: Bool) -> Void)?) {
+        
+        ref.child("conversations").child(clientUID).child(yourUID).child("isTyping").observe(.value) { (snapshot) in
+            if let isTyping = snapshot.value as? Bool{
+                if let complete = callback {
+                    complete(isTyping)
+                }
+            }
+        }
     }
 }

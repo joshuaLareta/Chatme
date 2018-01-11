@@ -29,6 +29,7 @@ class JLConversationManager {
     var conversation: Conversation
     var messages: Array<Dictionary<AnyHashable,Any>?> = [Dictionary<AnyHashable,Any>?]()
     var hasStartedListening: Bool = false
+    var keyStrokeTimer: Timer?
     
     init(withClient client: Client, andYou you: Client, andChatId chatId: String){
         conversation = Conversation(client: client, you: you, chatId: chatId)
@@ -118,5 +119,28 @@ class JLConversationManager {
             }
         }
         return false
+    }
+    
+    func update(isClientTyping isTyping: Bool) {
+          keyStrokeTimer?.invalidate() // remove
+        if isTyping == true {
+            keyStrokeTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: {[weak self] (timer) in
+                self?.keystrokeTimerHit()
+            })
+            
+        }
+        firebaseManager.isTyping(withYourUID: conversation.you.uid, andClientUID: conversation.client.uid, andIsTyping: isTyping)
+    }
+    
+     func keystrokeTimerHit () {
+        update(isClientTyping: false)
+    }
+    
+    func clientIsTypingListener (_ callBack:((_ isTyping: Bool)->Void)?){
+        firebaseManager.isTypingListener(withYourUID: conversation.you.uid, andClientUID: conversation.client.uid) {(isTyping) in
+            if let complete = callBack {
+                complete(isTyping)
+            }
+        }
     }
 }

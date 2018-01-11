@@ -59,9 +59,33 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
     
     var keyboardLayoutConstraint: NSLayoutConstraint?
     
+    var titleView: UIView = {
+        let tempTitleView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        tempTitleView.backgroundColor = .clear
+        return tempTitleView
+    }()
+    
+    var titleLabel: UILabel = {
+        let tempTitleLabel = UILabel()
+        tempTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        tempTitleLabel.textColor = .darkGray
+        tempTitleLabel.textAlignment = .center
+        tempTitleLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        
+        return tempTitleLabel
+    }()
+    
+    var subtitleLabel: UILabel = {
+        let tempSubtitleLabel = UILabel()
+        tempSubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        tempSubtitleLabel.textColor = .lightGray
+        tempSubtitleLabel.textAlignment = .center
+        tempSubtitleLabel.font = UIFont.systemFont(ofSize: 10)
+        return tempSubtitleLabel
+    }()
+    
     init(withClient client: Client, andYou you: Client, andChatId chatId: String) {
         super.init(nibName: nil, bundle: nil)
-        self.title = client.email
         conversationManager = JLConversationManager(withClient: client, andYou: you, andChatId: chatId)
     }
     
@@ -104,7 +128,6 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(JLConversationViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(JLConversationViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
         startListening()
     }
     
@@ -122,6 +145,13 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
                 // insert the messages one by one
             }
             self?.scrollTableViewToBottom()
+            self?.conversationManager?.clientIsTypingListener({[weak self] (isTyping) in
+                if isTyping == true {
+                    self?.subtitleLabel.text = NSLocalizedString("Typing...", comment: "user is typing label")
+                } else {
+                    self?.subtitleLabel.text = nil
+                }
+            })
         })
     }
     override func viewDidLoad() {
@@ -131,6 +161,23 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
         textView.delegate = self
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        
+        // add the needed elements
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        // add the constraints
+        titleView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[titleLabel]-10-|", options: [], metrics: nil, views: ["titleLabel":titleLabel]))
+        titleView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[titleLabel(==20)]", options: [], metrics: nil, views: ["titleLabel":titleLabel]))
+        
+        titleView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[subtitleLabel]-10-|", options: [], metrics: nil, views: ["subtitleLabel":subtitleLabel]))
+        titleView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[titleLabel][subtitleLabel(>=1)]-5@999-|", options: [], metrics: nil, views: ["titleLabel":titleLabel,"subtitleLabel":subtitleLabel]))
+        titleView.layoutIfNeeded()
+        self.view.layoutIfNeeded()
+        
+        titleLabel.text = conversationManager?.conversation.client.email
+        subtitleLabel.text = nil
+        // special label for the navigation bar
+        self.navigationItem.titleView = titleView
     }
 
     override func didReceiveMemoryWarning() {
@@ -204,6 +251,11 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
         return tableView.dequeueReusableHeaderFooterView(withIdentifier: JLConversationViewController.cellFooterIdentifier)
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // is user typing
+        conversationManager?.update(isClientTyping: true)
+        return true
+    }
     
     // custom function
     
