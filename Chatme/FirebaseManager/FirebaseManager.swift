@@ -249,7 +249,7 @@ class FirebaseManager {
     
     func isTypingListener(withYourUID yourUID: String, andClientUID clientUID: String, andCallback callback: ((_ isTyping: Bool) -> Void)?) {
         
-        ref.child("conversations").child(clientUID).child(yourUID).child("isTyping").observe(.value) { (snapshot) in
+      typingObserver = ref.child("conversations").child(clientUID).child(yourUID).child("isTyping").observe(.value) { (snapshot) in
             if let isTyping = snapshot.value as? Bool{
                 if let complete = callback {
                     complete(isTyping)
