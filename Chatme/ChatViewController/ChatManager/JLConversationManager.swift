@@ -110,4 +110,13 @@ class JLConversationManager {
     func stopUpdatingMessage() {
         firebaseManager.removeConversationListener(withYourUID: conversation.you.uid, andClientUID: conversation.client.uid, fromChatId: conversation.chatId)
     }
+    
+    func isMessageYours(atMessageIndex index: Int) -> Bool {
+        if let messageDictionary = messages[index]{
+            if messageDictionary["sender"] as? String == conversation.you.uid {
+                return true
+            }
+        }
+        return false
+    }
 }

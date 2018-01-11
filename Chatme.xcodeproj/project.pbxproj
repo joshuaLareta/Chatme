@@ -18,6 +18,7 @@
 		4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229550E200339D10075BD12 /* JLRegistrationViewController.swift */; };
 		4229551220033F390075BD12 /* JLLoginAndRegBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4229551120033F390075BD12 /* JLLoginAndRegBaseViewController.swift */; };
 		422955152003900D0075BD12 /* JLRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422955142003900D0075BD12 /* JLRegistrationManager.swift */; };
+		422BB1622007445D00E109B1 /* JLChatConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422BB1612007445D00E109B1 /* JLChatConversationTableViewCell.swift */; };
 		424ACF042003A87A007B4C15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */; };
 		424ACF062003C084007B4C15 /* JLLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF052003C084007B4C15 /* JLLoginManager.swift */; };
 		424ACF0B2004A9E7007B4C15 /* JLContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424ACF0A2004A9E7007B4C15 /* JLContactsViewController.swift */; };
@@ -60,6 +61,7 @@
 		4229550E200339D10075BD12 /* JLRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JLRegistrationViewController.swift; path = LoginAndRegistration/JLRegistrationViewController.swift; sourceTree = "<group>"; };
 		4229551120033F390075BD12 /* JLLoginAndRegBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginAndRegBaseViewController.swift; sourceTree = "<group>"; };
 		422955142003900D0075BD12 /* JLRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLRegistrationManager.swift; sourceTree = "<group>"; };
+		422BB1612007445D00E109B1 /* JLChatConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLChatConversationTableViewCell.swift; sourceTree = "<group>"; };
 		424ACF032003A4EE007B4C15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		424ACF052003C084007B4C15 /* JLLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLLoginManager.swift; sourceTree = "<group>"; };
 		424ACF0A2004A9E7007B4C15 /* JLContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLContactsViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		42295506200336730075BD12 /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				422BB1602007442B00E109B1 /* JLChatConversationTableViewCell */,
 				424ACF1420052FB3007B4C15 /* ChatManager */,
 				422955072003377E0075BD12 /* JLConversationViewController.swift */,
 				42295509200337B50075BD12 /* JLConversationListViewController.swift */,
@@ -185,6 +188,14 @@
 				424ACF052003C084007B4C15 /* JLLoginManager.swift */,
 			);
 			path = JLAuthManagers;
+			sourceTree = "<group>";
+		};
+		422BB1602007442B00E109B1 /* JLChatConversationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				422BB1612007445D00E109B1 /* JLChatConversationTableViewCell.swift */,
+			);
+			path = JLChatConversationTableViewCell;
 			sourceTree = "<group>";
 		};
 		424ACF082004A2FD007B4C15 /* ContactsViewController */ = {
@@ -460,6 +471,7 @@
 				422954E9200333950075BD12 /* RootViewController.swift in Sources */,
 				424ACF0D2004AF00007B4C15 /* JLTableViewBaseViewController.swift in Sources */,
 				4229550D200339AA0075BD12 /* JLLoginViewController.swift in Sources */,
+				422BB1622007445D00E109B1 /* JLChatConversationTableViewCell.swift in Sources */,
 				4229550A200337B50075BD12 /* JLConversationListViewController.swift in Sources */,
 				4229550F200339D10075BD12 /* JLRegistrationViewController.swift in Sources */,
 				424ACF1820052FF3007B4C15 /* JLConversationManager.swift in Sources */,

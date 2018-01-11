@@ -16,6 +16,7 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
     var conversationManager: JLConversationManager?
     var hasFinishedConversationBlock:(()->Void)?
     static let cellDefaultIdentifier = "cellDefaultIdentifier"
+    static let cellHisCellIdentifier = "cellHisCellIdentifier"
     static let cellFooterIdentifier = "cellDefaultFooterIdentifier"
     let bottomBar: UIView = {
         let tempBottomBar = UIView()
@@ -28,10 +29,11 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
     let chatTableView: UITableView = {
         let tempChatTableView = UITableView(frame: .zero, style: .plain)
         tempChatTableView.translatesAutoresizingMaskIntoConstraints = false
-//        tempChatTableView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi)); // need to rotate so cell starts at the bottom
         tempChatTableView.sectionFooterHeight = 0.1
-
-        tempChatTableView.register(UITableViewCell.self, forCellReuseIdentifier: JLConversationViewController.cellDefaultIdentifier)
+        tempChatTableView.separatorColor = UIColor.clear
+        tempChatTableView.estimatedRowHeight = 50
+        tempChatTableView.register(JLChatConversationYourTableViewCell.self, forCellReuseIdentifier: JLConversationViewController.cellDefaultIdentifier)
+        tempChatTableView.register(JLChatConversationHisTableViewCell.self, forCellReuseIdentifier: JLConversationViewController.cellHisCellIdentifier)
         tempChatTableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: JLConversationViewController.cellFooterIdentifier)
         return tempChatTableView
     }()
@@ -115,17 +117,11 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
             }
             else {
                 self?.chatTableView.beginUpdates()
-                self?.chatTableView.insertRows(at:[IndexPath(row: self?.chatTableView.numberOfRows(inSection: 0) ?? 0, section: 0)], with: .automatic)
+                self?.chatTableView.insertRows(at:[IndexPath(row: self?.chatTableView.numberOfRows(inSection: 0) ?? 0, section: 0)], with: UITableViewRowAnimation.fade)
                 self?.chatTableView.endUpdates()
                 // insert the messages one by one
             }
-            var lastRow = (self?.chatTableView.numberOfRows(inSection: 0))!
-            if lastRow > 0 {
-                lastRow = lastRow - 1
-                
-                let lastIndexPath = IndexPath(row: lastRow, section: 0)
-                self?.chatTableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
-            }
+            self?.scrollTableViewToBottom()
         })
     }
     override func viewDidLoad() {
@@ -164,6 +160,7 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
         } else {
             print("something went wrong and didn't managed to get any keyboardSize")
         }
+        scrollTableViewToBottom()
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
@@ -175,8 +172,12 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
             // try to restart the listener as it may not have started properly
             startListening()
         }
-        conversationManager?.converse(withMessage: textView.text)
-        textView.text = nil // clear it out
+        var messageString = textView.text
+        messageString = messageString?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if messageString?.isEmpty == false {
+            conversationManager?.converse(withMessage: messageString!)
+            textView.text = nil // clear it out
+        }
     }
     
     //MARK: tableView datasource and Identifier
@@ -185,12 +186,37 @@ class JLConversationViewController: UIViewController,UITextViewDelegate,UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: JLConversationViewController.cellDefaultIdentifier, for: indexPath)
-        cell.textLabel?.text = conversationManager?.messageString(atIndex: indexPath.row)
-        return cell
+        /// check if the current message that is being displayed is yours
+        
+        if conversationManager?.isMessageYours(atMessageIndex: indexPath.row) == true {
+            let cell: JLChatConversationYourTableViewCell = tableView.dequeueReusableCell(withIdentifier: JLConversationViewController.cellDefaultIdentifier, for: indexPath) as! JLChatConversationYourTableViewCell
+            cell.message((conversationManager?.messageString(atIndex: indexPath.row))!)
+            return cell
+        }
+        else {
+            let cell: JLChatConversationHisTableViewCell = tableView.dequeueReusableCell(withIdentifier: JLConversationViewController.cellHisCellIdentifier, for: indexPath) as! JLChatConversationHisTableViewCell
+            cell.message((conversationManager?.messageString(atIndex: indexPath.row))!)
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return tableView.dequeueReusableHeaderFooterView(withIdentifier: JLConversationViewController.cellFooterIdentifier)
+    }
+    
+    
+    // custom function
+    
+    /// make scrollview scroll to the bottom
+    func scrollTableViewToBottom() {
+        // always perform the UI update on the main thread
+        DispatchQueue.main.async {[weak self] in
+            var lastRow = (self?.chatTableView.numberOfRows(inSection: 0))!
+            if lastRow > 0 {
+                lastRow = lastRow - 1
+                let lastIndexPath = IndexPath(row: lastRow, section: 0)
+                self?.chatTableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
+            }
+        }
     }
 }
