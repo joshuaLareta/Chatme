@@ -111,6 +111,7 @@ class JLConversationManager {
     func stopUpdatingMessage() {
         firebaseManager.removeConversationListener(withYourUID: conversation.you.uid, andClientUID: conversation.client.uid, fromChatId: conversation.chatId)
         keyStrokeTimer?.invalidate() // invalidate timer when we stop updating message. this means that the view is already being dismissed
+        update(isClientTyping: false) // force it to update the isTyping
     }
     
     func isMessageYours(atMessageIndex index: Int) -> Bool {
