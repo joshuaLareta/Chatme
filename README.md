@@ -80,3 +80,4 @@ Sample chat project using firebase
  - Conversation list
  - logout functionality
  - read/deliver notification
+ - pagination of message
